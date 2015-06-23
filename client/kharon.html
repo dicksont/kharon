@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+body {
+  padding: 0;
+  margin: 0;
+
+}
+textarea {
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  padding: 6px;
+}
+
+button {
+  padding: 9px 15px;
+  font-size: 14px;
+  margin: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+  <form>
+    <textarea id="textarea_entry"></textarea>
+    <div>
+      <button id="button_log" type="button">Log</button>
+    </div>
+  </form>
+  <script src="/kharon/client.js"></script>
+  <script src="/kharon/qunit.js"></script>
+  <script>
+
+    document.getElementById('button_log').addEventListener('click', function() {
+      var str = document.getElementById('textarea_entry').value;
+      kharon.post(str);
+    });
+
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+
+</html>
